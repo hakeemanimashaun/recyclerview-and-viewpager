@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">week_4_project_hakeemanimashaun</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="yaay">Yaay!</string>
+    <string name="its_victors_birthday">its victors birthday</string>
+</resources>
