@@ -9,9 +9,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.navigation.NavigationBarItemView
 
 class MainActivity : AppCompatActivity() {
-    val homeFragment = Home()
-    val peopleFragment = People()
-    val giftsFragment = Gifts()
+    //creating fragment instances
+    private val homeFragment = Home()
+    private val peopleFragment = People()
+    private val giftsFragment = Gifts()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         setCurrentFragment(homeFragment)
 
+        //each bottom navigation is set to its preferred fragment.
         var homeBottomNavView = findViewById<BottomNavigationItemView>(R.id.mi_home)
             homeBottomNavView.setOnClickListener{
                 setCurrentFragment(homeFragment)
@@ -35,9 +37,10 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+    // this function replaces the frame layout with selected fragment
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_fragment, fragment)
+            replace(R.id.frame_layout_fragment, fragment)
             commit()
         }
 

@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="yaay">Yaay!</string>
     <string name="its_victors_birthday">its victors birthday</string>
+    <string name="good_morning">Good Morning!</string>
+    <string name="upcoming_birthdays">Upcoming Birthdays</string>
+    <string name="add_new_birthday">add new birthday</string>
 </resources>
