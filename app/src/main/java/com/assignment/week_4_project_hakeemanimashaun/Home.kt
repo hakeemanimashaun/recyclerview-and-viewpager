@@ -13,7 +13,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import kotlin.math.abs
 
-class Home: Fragment(R.layout.home) {
+class Home : Fragment(R.layout.home) {
     lateinit var viewPager: ViewPager2
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,8 +21,8 @@ class Home: Fragment(R.layout.home) {
     ): View? {
 
 
-         // inflate the layout for this fragment
-        val view=inflater!!.inflate(R.layout.home, container, false)
+        // inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.home, container, false)
         val images = listOf<Int>(
             R.drawable.vector,
             R.drawable.backgroundone,
@@ -32,10 +32,10 @@ class Home: Fragment(R.layout.home) {
         //instance of adapter
         val adapter = ViewPagerAdapter(images)
         //setting adapter to own viewpager adapter and design details
-        view.findViewById<ViewPager2>(R.id.view_pager).adapter = adapter
+        viewPager.adapter = adapter
 
         viewPager = view.findViewById(R.id.view_pager)
-        viewPager.setPadding(80, 20, 80, 20,)
+        viewPager.setPadding(80, 20, 80, 20)
         viewPager.adapter = ViewPagerAdapter(images)
         viewPager.clipToPadding = false
         viewPager.clipChildren = false
@@ -54,25 +54,38 @@ class Home: Fragment(R.layout.home) {
         //recyclerview and recyclerview contents
         val arrayList = ArrayList<RecyclerViewModel>()
         arrayList.add(
-            RecyclerViewModel("Fatima","30-12-2034",
-            "42 days left", R.drawable.contactfour))
-        arrayList.add(RecyclerViewModel("Ola machiavelli","23-2-2035",
-            "56 days left", R.drawable.contact))
-        arrayList.add(RecyclerViewModel("Hakeem","25-4-2035",
-            "82 days left", R.drawable.contacttwo))
-        arrayList.add(RecyclerViewModel("Keena","30-6-2035",
-            "107 days left", R.drawable.contactthree))
+            RecyclerViewModel(
+                "Fatima", "30-12-2034",
+                "42 days left", R.drawable.contactfour
+            )
+        )
+        arrayList.add(
+            RecyclerViewModel(
+                "Ola machiavelli", "23-2-2035",
+                "56 days left", R.drawable.contact
+            )
+        )
+        arrayList.add(
+            RecyclerViewModel(
+                "Hakeem", "25-4-2035",
+                "82 days left", R.drawable.contacttwo
+            )
+        )
+        arrayList.add(
+            RecyclerViewModel(
+                "Keena", "30-6-2035",
+                "107 days left", R.drawable.contactthree
+            )
+        )
         val recyclerAdapter = RecyclerViewAdapter(arrayList, this)
 
         //recycler view layout and adapter
-        view.findViewById<RecyclerView>(R.id.recycler_view).layoutManager = LinearLayoutManager(this.context)
-        view.findViewById<RecyclerView>(R.id.recycler_view).adapter = recyclerAdapter
+        val recy = view.findViewById<RecyclerView>(R.id.recycler_view)
+        recy.layoutManager = LinearLayoutManager(this.context)
+        recy.adapter = recyclerAdapter
 
 
         return view
-
-
-
 
 
     }

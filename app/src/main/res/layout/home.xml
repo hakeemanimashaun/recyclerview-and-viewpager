@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:text="@string/good_morning" />
 
+
         <ImageView
             android:id="@+id/notification_icon"
             android:layout_width="30dp"
@@ -88,11 +89,15 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="450dp"
                 android:layout_marginTop="4dp"
+                tools:listitem="@layout/birthday_reminder"
+                tools:itemCount="3"
                 tools:layout_editor_absoluteX="-2dp" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/float_action_button"

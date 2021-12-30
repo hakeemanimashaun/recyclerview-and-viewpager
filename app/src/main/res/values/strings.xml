@@ -7,4 +7,6 @@
     <string name="good_morning">Good Morning!</string>
     <string name="upcoming_birthdays">Upcoming Birthdays</string>
     <string name="add_new_birthday">add new birthday</string>
+    <string name="_30_days_left">30 days left</string>
+    <string name="_20_10_2020">20-10-2020</string>
 </resources>
